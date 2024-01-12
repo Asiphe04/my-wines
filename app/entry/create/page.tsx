@@ -13,7 +13,6 @@ const formData={
     type:data.get("type")!.toString(),
     varietal:data.get("varietal")!.toString(),
     rating:data.get("rating")!.toString(),
-    // Date_consumed:data.get("Date_consumed")!.toString(),
     consumed:data.get("consumed")! as Consumed,
 }
 await prisma.entry.create({data:formData})
@@ -43,8 +42,6 @@ export default function CreatePage() {
         <label htmlFor="rating">rating:</label>
         <input type="text" name='rating' id='rating' placeholder='rating' />
 
-        {/* <label htmlFor="Date_consumed">Date_consumed:</label> */}
-        {/* <input type="date" name='Date_consumed' id='Date_consumed' placeholder='Date_consumed' /> */}
 
     <select name="consumed" >
         <option value="" disabled selected>Y/N</option>
