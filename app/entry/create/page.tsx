@@ -1,5 +1,5 @@
 import React from 'react'
-import { Consumed } from '@prisma/client'
+import {Consumed} from '@prisma/client'
 import { redirect } from 'next/navigation'
 
 async function createEntry(data:FormData) {
@@ -22,14 +22,30 @@ export default function CreatePage() {
     const consumeds = Object.values(Consumed)
   return (
     <form action={createEntry}>
-        <label htmlFor="title">Title:</label>
-        <input type="text" name='title' id='title' placeholder='title' />
+
+<label htmlFor="id">id:</label>
+        <input type="text" name='id' id='id' placeholder='id' />
+
+        <label htmlFor="name">name:</label>
+        <input type="text" name='name' id='name' placeholder='name' />
    
-        <label htmlFor="content">COntent:</label>
-        <textarea  name='content' id='content' placeholder='Content' />
-    
+        <label htmlFor="year">year:</label>
+        <input type="text" name='year' id='year' placeholder='year' />
+
+        <label htmlFor="type">type:</label>
+        <input type="text" name='type' id='type' placeholder='type' />
+
+        <label htmlFor="varietal">varietal:</label>
+        <input type="text" name='varietal' id='varietal' placeholder='varietal' />
+
+        <label htmlFor="rating">rating:</label>
+        <input type="text" name='rating' id='rating' placeholder='rating' />
+
+        <label htmlFor="Date_consumed">Date_consumed:</label>
+        <input type="date" name='Date_consumed' id='Date_consumed' placeholder='Date_consumed' />
+
     <select name="consumed" >
-        <option value="" disabled selected>Slelect A MOOD</option>
+        <option value="" disabled selected>Y/N</option>
         {consumeds.map((consumed, idx)=>(
             <option value={consumed} key={idx}>{consumed}</option>
         ))}
