@@ -21,22 +21,22 @@ export const POST = async (req: Request) => {
       );
     }
 
-    const existingName = await prisma.user.findUnique({
-      where: {
-        username: username,
-      },
-    });
-    if (existingName) {
-      return NextResponse.json(
-        {
-          message: "User with this username already exists",
-          user: null,
-        },
-        {
-          status: 409,
-        }
-      );
-    }
+    // const existingName = await prisma.user.findUnique({
+    //   where: {
+    //     username: username,
+    //   },
+    // });
+    // if (existingName) {
+    //   return NextResponse.json(
+    //     {
+    //       message: "User with this username already exists",
+    //       user: null,
+    //     },
+    //     {
+    //       status: 409,
+    //     }
+    //   );
+    // }
     const hashedPassword = await hash(password, 10);
     const newUser = await prisma.user.create({
       data: {

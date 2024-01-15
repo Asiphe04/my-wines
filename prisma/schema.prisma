@@ -20,7 +20,7 @@ model Entry {
 }
 
 model User {
-  username     String?
+  username     String
   password String
   email    String  @unique
   id       Int     @id @default(autoincrement())
