@@ -44,6 +44,7 @@ export default function EntryCard({id, name, year, type, varietal, rating, consu
           <td className="py-2 px-4 border-b">{rating}</td>
           {/* <td className="py-2 px-4 border-b">{Date_consumed}</td> */}
           <td className="py-2 px-4 border-b">
+       
             {consumed}
             <button className="ml-2 px-2 py-1 bg-red-500 text-white rounded" onClick={() => deleteEntry(id)}>
               Delete
