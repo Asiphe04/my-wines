@@ -1,26 +1,14 @@
-// export const revalidate = 10;
-// import EntryCard from "@/components/EntryCard";
-// import {prisma} from "@/lib/prisma";
-// export default async function wines() {
-//   const entries = await prisma.entry.findMany({
-    
-//   });
-//   return (
-//     <>
-//       {entries.map((entry) => (
-//         <EntryCard key={entry.id} {...entry} />
-//       ))}
-//     </>
-//   );
-// }
 
 import EntryCard from "@/components/EntryCard";
 import { prisma } from "@/lib/prisma";
+import Navbar from "@/components/Navbar";
+import '@/app/globals.css'
 
 const Wines = ({ entries }) => {
   return (
     <div>
-      <h1>Login</h1>
+      <Navbar/>
+      <h1>Wines</h1>
       <EntryCard entries={entries} />
     </div>
   );

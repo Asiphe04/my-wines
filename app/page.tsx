@@ -5,8 +5,7 @@ import { parseCookies } from 'nookies';
 import { useRouter } from 'next/navigation';
 
 export const revalidate = 10;
-import EntryCard from "@/components/EntryCard";
-import { prisma } from "@/lib/prisma";
+
 
 const home = () => {
   
@@ -28,7 +27,7 @@ const home = () => {
 
   return (
     <>
-      <h1 className="font-extralight text-cyan-800 text-xl">Hello, world!</h1>
+      <h1 className="text-white">Hello, world!</h1>
     </>
   );
 };

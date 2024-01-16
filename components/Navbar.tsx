@@ -7,19 +7,12 @@ export default function Navbar() {
       <ul>
         <li><strong>Wine App</strong></li>
       </ul>
+   
       <ul>
-        <li>
-            <button>
-            <a href="/entry/create" >New Entry</a>
-            </button>
-
-
-           
-        </li>
-
-      </ul>
-      <ul>
-      <Link href="/wines">Wines</Link>
+        <button className='ml-2 px-2 py-1 bg-red-500 text-white rounded'>
+        <a href="/wines">List of Wines</a>
+        </button>
+     
       </ul>
     </nav>
   )
