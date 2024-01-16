@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function Navbar() {
   return (
@@ -11,8 +12,14 @@ export default function Navbar() {
             <button>
             <a href="/entry/create" >New Entry</a>
             </button>
+
+
            
         </li>
+
+      </ul>
+      <ul>
+      <Link href="/wines">Wines</Link>
       </ul>
     </nav>
   )

@@ -10,7 +10,7 @@ datasource db {
 
 model Entry {
   id            String    @id @default(uuid())
-  Date_consumed DateTime?
+ 
   consumed      Consumed
   name          String
   rating        String

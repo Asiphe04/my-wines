@@ -4,17 +4,18 @@ import '@/app/globals.css'
 import { parseCookies } from 'nookies';
 import { useRouter } from 'next/navigation';
 
+export const revalidate = 10;
+import EntryCard from "@/components/EntryCard";
+import { prisma } from "@/lib/prisma";
+
 const home = () => {
+  
   const router = useRouter();
 
   useEffect(() => {
     const storage = localStorage.getItem("info");
     const logged = storage ? localStorage.getItem("key") : null;
 
-    // if (!logged) {
-    //   console.log("Information not found");
-    //   router.push("/login");
-    // }
 
     const cookies = parseCookies();
     const token = cookies['token'];
