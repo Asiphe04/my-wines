@@ -1,31 +1,35 @@
-"use client"
-
-export const revalidate = 10;
+"use client";
 import React, { useEffect } from 'react'
-import EntryCard from "@/components/EntryCard";
-import { prisma } from "@/lib/prisma";
-import { useRouter } from 'next/router'
-import { setCookie, parseCookies, destroyCookie } from "nookies";
+import '@/app/globals.css'
+import { parseCookies } from 'nookies';
+import { useRouter } from 'next/navigation';
 
+const home = () => {
+  const router = useRouter();
 
-export default async function Home() {
-  const entries = await prisma.entry.findMany();
-  const redirect = () => {
-    const router = useRouter()
-    useEffect(() => {
-      const cookie = parseCookies()
-      if(!cookie){
-        router.push('/login')
-      }
-      
-    }, []);
-  };
+  useEffect(() => {
+    const storage = localStorage.getItem("info");
+    const logged = storage ? localStorage.getItem("key") : null;
+
+    // if (!logged) {
+    //   console.log("Information not found");
+    //   router.push("/login");
+    // }
+
+    const cookies = parseCookies();
+    const token = cookies['token'];
+
+    if (!token) {
+      console.log("Token not found");
+      router.push("/login");
+    }
+  }, [router]);
 
   return (
     <>
-      {entries.map((entry) => (
-        <EntryCard key={entry.id} {...entry} />
-      ))}
+      <h1 className="font-extralight text-cyan-800 text-xl">Hello, world!</h1>
     </>
   );
-}
+};
+
+export default home;
